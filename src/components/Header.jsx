@@ -1,30 +1,31 @@
 import React from 'react'
 import logo from '../assets/cap.jpg'
 import serch from '../assets/search.svg'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className='shadow-md'>
-        <div className='flex items-center justify-between px-8 py-4 mx-auto max-w-7xl pl-6'>
-            <div className='flex items-center'>
-                <img className='h-20' src={logo} alt="" />
+    <header className='shadow-md'>
+        <div className='flex items-center justify-between px-4 sm:px-8 py-4 mx-auto max-w-7xl pl-6'>
+            <Link to="/" className='flex items-center'>
+                <img className='h-20 rounded-4xl' src={logo} alt="Logo da barra de principal" />
                 <p className='text-2xl, font-bold  text-primary-400'>Caputobnb</p>
-                </div>
+            </Link>
 
-                    <div className='flex items-center border border-gray-300 py-2 px-4 rounded-full shadow-md'>
+                  <Link to="/" className='hidden lg:flex items-center border border-gray-300 py-2 px-4 rounded-full shadow-md'>
                         <p className='border-r border-r-gray-300 pr-4'>Qualquer lugar</p>
                         <p className='border-r border-r-gray-300 px-4'>Qualquer semana</p>
                         <p className='px-4'>Hóspedes</p>
 
-                        <div className='bg-primary-400 rounded-full p-2 text-white'>
+                      <div className='bg-primary-400 rounded-full p-2 text-white'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                         </svg>
 
-                    </div>
-                </div>
+                      </div>
+                  </Link>
 
-             <div className='flex items-center gap-2 border border-gray-300 py-2 px-4 rounded-full shadow-md'>
+                <Link to="/login" className='flex items-center gap-2 border border-gray-300 py-2 px-4 rounded-full shadow-md'>
                         
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-gray-600">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -36,11 +37,11 @@ const Header = () => {
                         </svg>
 
 
-                        <p className='px-4'>Caputo AMC</p>
+                        <p className='sm:max-w-32 max-w-20 truncate'>Caputo AMC</p>
                     
-                </div>
+                </Link>
         </div>
-    </div>
+    </header>
   )
 }
 
